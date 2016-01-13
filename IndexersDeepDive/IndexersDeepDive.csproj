@@ -68,6 +68,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStore.cs" />
     <Compile Include="SamplesFromMSDN.cs" />
+    <Compile Include="DataStoreSingletonIndexer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

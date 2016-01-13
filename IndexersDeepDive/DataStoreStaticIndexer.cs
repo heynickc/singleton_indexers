@@ -9,13 +9,10 @@ using Xunit;
 
 namespace IndexersDeepDive {
     static class DataStoreStaticIndexer {
-
         private static readonly Dictionary<string, object> _properties = new Dictionary<string, object>();
-
         //public dynamic this[string index] // throws 'DataStoreStaticIndexer.this[string]': cannot declare indexers in a static class
         //{
-        //    get
-        //    {
+        //    get {
         //        dynamic value;
         //        _properties.TryGetValue(index, out value);
         //        return value;

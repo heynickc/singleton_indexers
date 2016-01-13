@@ -16,15 +16,14 @@ namespace IndexersDeepDive {
         public DataStore() {
             this._properties = new Dictionary<string, object>();
         }
-        public void SetProperty<T>(string name, T value) {
+        private void SetProperty<T>(string name, T value) {
             _properties.Add(name, value);
         }
-        public dynamic GetProperty(string name) {
+        private dynamic GetProperty(string name) {
             dynamic value;
             _properties.TryGetValue(name, out value);
             return value;
         }
-
         public dynamic this[string index] {
             get { return GetProperty(index); }
             set { SetProperty(index, value); }
@@ -36,27 +35,27 @@ namespace IndexersDeepDive {
         public DataStoreTests(ITestOutputHelper output) {
             _output = output;
         }
-        [Fact]
-        public void can_create_heterogeneous_dictionary() {
-            var dataStore = new DataStore();
-            dataStore.SetProperty<string>("Key1", "String");
-            dataStore.SetProperty<int>("Key2", 55);
-            dataStore.SetProperty("Key3", new KeyValuePair<string, int>("Key", 10));
-            dataStore.SetProperty("Key4", DateTime.Now);
+        //[Fact]
+        //public void can_create_heterogeneous_dictionary() {
+        //    var dataStore = new DataStore();
+        //    dataStore.SetProperty<string>("Key1", "String");
+        //    dataStore.SetProperty<int>("Key2", 55);
+        //    dataStore.SetProperty("Key3", new KeyValuePair<string, int>("Key", 10));
+        //    dataStore.SetProperty("Key4", DateTime.Now);
 
-            Assert.IsType<KeyValuePair<string, int>>(dataStore.GetProperty("Key3"));
-            Assert.Equal(10, dataStore.GetProperty("Key3").Value);
-        }
+        //    Assert.IsType<KeyValuePair<string, int>>(dataStore.GetProperty("Key3"));
+        //    Assert.Equal(10, dataStore.GetProperty("Key3").Value);
+        //}
 
-        [Fact]
-        public void dictionary_trygetvalue_was_a_good_choice() {
-            var dataStore = new DataStore();
-            dataStore.SetProperty<string>("Key1", "String");
-            dataStore.SetProperty<int>("Key2", 55);
-            dataStore.SetProperty("Key3", new KeyValuePair<string, int>("KV", 10));
+        //[Fact]
+        //public void dictionary_trygetvalue_was_a_good_choice() {
+        //    var dataStore = new DataStore();
+        //    dataStore.SetProperty<string>("Key1", "String");
+        //    dataStore.SetProperty<int>("Key2", 55);
+        //    dataStore.SetProperty("Key3", new KeyValuePair<string, int>("KV", 10));
 
-            Assert.Equal(null, dataStore.GetProperty("Whatevs.."));
-        }
+        //    Assert.Equal(null, dataStore.GetProperty("Whatevs.."));
+        //}
 
         [Fact]
         public void set_properties_using_indexer() {
