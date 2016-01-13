@@ -26,7 +26,7 @@ namespace IndexersDeepDive {
     public class DaysCollectionTests {
 
         [Fact]
-        public void Get_value_from_indexer() {
+        public void get_value_from_indexer() {
 
             DaysCollection week = new DaysCollection();
 
@@ -34,7 +34,7 @@ namespace IndexersDeepDive {
         }
 
         [Fact]
-        public void Throws_error_if_value_doesnt_exist() {
+        public void throws_error_if_value_doesnt_exist() {
 
             DaysCollection week = new DaysCollection();
 

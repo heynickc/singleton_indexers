@@ -42,6 +42,7 @@ namespace IndexersDeepDive {
             dataStore.SetProperty<string>("Key1", "String");
             dataStore.SetProperty<int>("Key2", 55);
             dataStore.SetProperty("Key3", new KeyValuePair<string, int>("Key", 10));
+            dataStore.SetProperty("Key4", DateTime.Now);
 
             Assert.IsType<KeyValuePair<string, int>>(dataStore.GetProperty("Key3"));
             Assert.Equal(10, dataStore.GetProperty("Key3").Value);
