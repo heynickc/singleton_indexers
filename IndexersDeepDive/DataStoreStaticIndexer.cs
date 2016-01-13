@@ -30,6 +30,8 @@ namespace IndexersDeepDive {
             //DataStoreStaticIndexer["Key1"] = "A String";
         }
     }
+
+    // https://stackoverflow.com/questions/401232/static-indexers?lq=1
     static class ConfigurationManager {
 
         //public object this[string name] // throws 'ConfigurationManager.this[string]': cannot declare indexers in a static class

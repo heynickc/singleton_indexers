@@ -62,10 +62,12 @@ namespace IndexersDeepDive {
         public void set_properties_using_indexer() {
             var dataStore = new DataStore();
             dataStore["Key1"] = "String";
-            dataStore["Key2"] = new KeyValuePair<string, int>("KV", 10);
+            dataStore["Key2"] = 55;
+            dataStore["Key4"] = DateTime.Now;
+            dataStore["Key3"] = new KeyValuePair<string, int>("KV", 10);
 
             Assert.Equal("String", dataStore["Key1"]);
-            Assert.Equal(10, dataStore["Key2"].Value);
+            Assert.Equal(10, dataStore["Key3"].Value);
         }
     }
 

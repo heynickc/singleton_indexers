@@ -61,8 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStoreStaticIndexer.cs" />
+    <Compile Include="DataStoreStaticMemberIndexer.cs" />
+    <Compile Include="DataStoreWithIndexer.cs" />
     <Compile Include="DaysCollection.cs" />
-    <Compile Include="FirstAttempt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataStore.cs" />
     <Compile Include="SamplesFromMSDN.cs" />
